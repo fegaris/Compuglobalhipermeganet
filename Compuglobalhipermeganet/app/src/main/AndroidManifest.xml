@@ -24,16 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".LoginActivity">
-            <intent-filter>
-                
-            </intent-filter>
 
-        </activity>
-=======
+
         <activity android:name=".LoginActivity"></activity>
->>>>>>> a34c00a3f85f41b720df3402d309f56cbdc2c117
+
     </application>
 
 </manifest>
