@@ -53,9 +53,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ProductoViewHolder
 
     @Override
     public void onBindViewHolder(ProductoViewHolder holder, int position) {
-        holder.productoNombre.setText(listadoProd.get(position).nombre);
-        holder.productoDescripBreve.setText(listadoProd.get(position).descripcionBreve);
-      //  holder.productoIdFoto.setImageResource(listadoProd.get(position).idFoto);
+        holder.productoNombre.setText(listadoProd.get(position).getNombre());
+        holder.productoDescripBreve.setText(listadoProd.get(position).getDescripcionBreve());
+        //  Glide.with(mContext).load(mDataset.get(position).getImageUrl()).into(holder.mImgtView);
+        //Glide.with(mContext).load("http://goo.gl/gEgYUd").into(holder.mImgtView);
+        //holder.productoIdFoto.setImageResource(listadoProd.get(position).getIdFoto());
       //  holder.productoPrecio.setText(listadoProd.get(position).precio);
     }
 

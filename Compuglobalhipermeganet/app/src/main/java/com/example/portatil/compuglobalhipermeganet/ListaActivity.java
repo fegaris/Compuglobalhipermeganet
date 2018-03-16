@@ -11,7 +11,6 @@ import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
 
-    Context context;
     RecyclerView rv;
 
     @Override
@@ -22,7 +21,7 @@ public class ListaActivity extends AppCompatActivity {
         //si el tamaño no cambia, esto mejora el desempeño
         rv.setHasFixedSize(true);
 
-        LinearLayoutManager llm = new LinearLayoutManager(context);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
 
     }
