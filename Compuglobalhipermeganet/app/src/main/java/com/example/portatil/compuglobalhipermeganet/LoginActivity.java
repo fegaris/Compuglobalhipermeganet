@@ -140,6 +140,7 @@ public class LoginActivity extends AppCompatActivity {
             //mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
 
             //findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
             //findViewById(R.id.email_password_fields).setVisibility(View.GONE);
