@@ -15,6 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
+    private SignInButton btnLoginGoogle;
 
     private EditText etEmailLogin;
     private EditText etPasswordLogin;
@@ -41,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance(); //Instanciamos el login de firebase
         etEmailLogin = (EditText)findViewById(R.id.etEmailLogin);
         etPasswordLogin = (EditText)findViewById(R.id.etPasswordLogin);
+        btnLoginGoogle = (SignInButton)findViewById(R.id.btnLoginGoogle);
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -55,6 +58,16 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Error al loguear", Toast.LENGTH_LONG).show();
             }
         }).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
+
+
+        //Boton google
+        btnLoginGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+                startActivityForResult(signInIntent, RC_SIGN_IN);
+            }
+        });
 
     }
     @Override
@@ -125,6 +138,8 @@ public class LoginActivity extends AppCompatActivity {
             //mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
             //user.getEmail(), user.isEmailVerified()));
             //mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
 
             //findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
             //findViewById(R.id.email_password_fields).setVisibility(View.GONE);
@@ -147,10 +162,6 @@ public class LoginActivity extends AppCompatActivity {
     Conectar con google
      */
 
-    public void signIn(View view) {
-        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -190,8 +201,6 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-
-                        // ...
                     }
                 });
     }
