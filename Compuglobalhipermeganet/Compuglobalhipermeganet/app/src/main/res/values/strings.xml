@@ -13,4 +13,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_contacto">Map</string>
+    <!-- Strings facebook developers -->
+    <string name="FACEBOOK_APP_ID">769460296592249</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">[ACCOUNT_KIT_CLIENT_TOKEN]</string>
 </resources>

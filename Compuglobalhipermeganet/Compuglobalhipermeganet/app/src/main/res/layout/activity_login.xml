@@ -62,13 +62,14 @@
         android:layout_marginTop="84dp"
         android:text="Facebook" />
 
-    <Button
-        android:id="@+id/btnGoogle"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnLoginGoogle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnFacebook"
-        android:layout_alignBottom="@+id/btnFacebook"
         android:layout_alignLeft="@+id/btnLogin"
         android:layout_alignStart="@+id/btnLogin"
-        android:text="google" />
+        android:layout_alignTop="@+id/btnFacebook" />
+
+
+
 </RelativeLayout>
