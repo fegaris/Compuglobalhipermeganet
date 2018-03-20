@@ -3,6 +3,7 @@ package com.example.portatil.compuglobalhipermeganet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -43,12 +44,10 @@ public class MainActivity extends AppCompatActivity {
         gv.setAdapter(adapter);
     }
 
-    public void mostrarProductos(View view)
-    {
-        // Start the next activity
-        Intent in = new Intent().setClass(
-                MainActivity.this, ListaActivity.class);
-        in.putExtra("categoria","cat_1");
-        startActivity(in);
-    }
+public void contactar(View view)
+{
+    Intent in=new Intent(this,actividad.class);
+    this.startActivity(in);
+}
+
 }

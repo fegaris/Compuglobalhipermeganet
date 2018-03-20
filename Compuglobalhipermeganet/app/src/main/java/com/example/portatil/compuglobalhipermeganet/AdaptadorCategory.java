@@ -59,12 +59,13 @@ public class AdaptadorCategory extends BaseAdapter {
         final Categoria item = getItem(position);
 
 
+
         nombre.setText(item.getNombre());
         Glide.with(imagen_categoria.getContext())
                 .load(lis_categ.get(0).getUrl())
                 .into(imagen_categoria );
 
-//Cuando hago click en la grilla me lleva a la actividad de detalle
+    //Cuando hago click en la grilla me lleva a la actividad de detalle
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,9 +84,9 @@ public class AdaptadorCategory extends BaseAdapter {
     private void openDetailActivity(String...details)
     {
 
-        Intent i=new Intent(context,DetailActivity.class);
+        Intent i=new Intent(context,ListaActivity.class);
 
-        i.putExtra("categoria",details[0]);
+        i.putExtra("categoria","cat_1");
 
         Log.d("raquel" , "el nombre que paso es " + details[0] );
 
