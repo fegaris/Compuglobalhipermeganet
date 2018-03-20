@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
         gv = (GridView) findViewById(R.id.gridprincipal);
 
         //INITIALIZE FIREBASE DB
-        db = FirebaseDatabase.getInstance().getReference();
+       // db = FirebaseDatabase.getInstance().getReference();
+      
+        db =  FirebaseDatabase.getInstance().getReference()
+                .child("categorias");
         helper = new FirebaseHelper(db);
 
         //ADAPTER
