@@ -138,8 +138,11 @@ public class LoginActivity extends AppCompatActivity {
             //mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
             //user.getEmail(), user.isEmailVerified()));
             //mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+
+            Toast.makeText(LoginActivity.this, "Conectado", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
 
             //findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
             //findViewById(R.id.email_password_fields).setVisibility(View.GONE);
@@ -192,6 +195,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithCredential:success");
+                            Toast.makeText(LoginActivity.this, "Conectando...", Toast.LENGTH_LONG).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
@@ -204,4 +208,9 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
+    /*
+    Creamos el login con Facebook
+     */
 }
