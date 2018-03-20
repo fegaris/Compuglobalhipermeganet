@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -51,6 +52,16 @@ public class LoginActivity extends AppCompatActivity {
         etEmailLogin = (EditText)findViewById(R.id.etEmailLogin);
         etPasswordLogin = (EditText)findViewById(R.id.etPasswordLogin);
         btnLoginGoogle = (SignInButton)findViewById(R.id.btnLoginGoogle);
+
+        //Boton registrar
+        Button btnRegistrar = (Button)findViewById(R.id.btnRegistro);
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, Sign_up.class);
+                startActivity(intent);
+            }
+        });
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -276,4 +287,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
