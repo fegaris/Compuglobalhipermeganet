@@ -52,16 +52,6 @@
         android:layout_alignTop="@+id/btnRegistro"
         android:text="Login" />
 
-    <Button
-        android:id="@+id/btnFacebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/btnRegistro"
-        android:layout_alignRight="@+id/btnRegistro"
-        android:layout_below="@+id/btnRegistro"
-        android:layout_marginTop="84dp"
-        android:text="Facebook" />
-
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btnLoginGoogle"
@@ -72,9 +62,13 @@
         android:layout_alignTop="@+id/btnFacebook" />
 
     <com.facebook.login.widget.LoginButton
+        android:id="@+id/btnFacebook"
         android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnRegistro"
+        android:layout_alignRight="@+id/btnRegistro"
+        android:layout_below="@+id/btnRegistro"
+        android:layout_marginTop="84dp" />
 
 
 
