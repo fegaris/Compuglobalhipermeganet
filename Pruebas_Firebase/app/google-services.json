@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "290051639407",
+    "firebase_url": "https://pruebasfirebase-d7afb.firebaseio.com",
+    "project_id": "pruebasfirebase-d7afb",
+    "storage_bucket": "pruebasfirebase-d7afb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290051639407:android:4cc2c09d35e88b5a",
+        "android_client_info": {
+          "package_name": "com.example.rcc.pruebas_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290051639407-s59h6au6rf5d9sjrjajfqd9kviq4mtue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMsW0a3WoYOv7WckyW7_wRpr1JaEgTi90"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
