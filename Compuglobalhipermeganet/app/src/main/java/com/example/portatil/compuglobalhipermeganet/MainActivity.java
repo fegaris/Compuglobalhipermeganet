@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -50,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
 public void contactar(View view)
 {
-    //Intent in=new Intent(this,actividad.class);
-    //this.startActivity(in);
+    Intent in=new Intent(this,ContactoActivity.class);
+    this.startActivity(in);
 }
 
 }
