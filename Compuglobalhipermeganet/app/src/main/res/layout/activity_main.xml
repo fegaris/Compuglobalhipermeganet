@@ -45,17 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="54dp"
-        android:drawableBottom= "@drawable/boton_de_desloguear"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:text="Button" />
+        android:text="Desconectar" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Categoria prueba"
-        android:id="@+id/btncateg"
-        android:onClick="categPrueba"/>
 
 </LinearLayout>
