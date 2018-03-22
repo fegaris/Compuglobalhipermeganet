@@ -15,6 +15,17 @@ public class Producto {
     private String precio;
     private String stock;
 
+    public Producto(){
+        this.idproducto="";
+        this.idcategoria="";
+        this.nombre="";
+        this.corta="";
+        this.larga="";
+        this.idfoto="";
+        this.precio="";
+        this.stock="";
+    }
+
     public Producto(String idproducto, String idcategoria, String nombre, String corta, String larga, String idfoto, String precio, String stock) {
         this.idproducto = idproducto;
         this.idcategoria = idcategoria;
