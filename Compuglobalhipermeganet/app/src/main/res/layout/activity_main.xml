@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="54dp"
+        android:drawableBottom= "@drawable/boton_de_desloguear"
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp"
         android:text="Button" />
