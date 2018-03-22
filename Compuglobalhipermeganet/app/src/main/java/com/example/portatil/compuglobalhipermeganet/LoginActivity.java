@@ -226,6 +226,7 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
             } else {
+                Toast.makeText(LoginActivity.this, "Error al conectar", Toast.LENGTH_LONG).show();
                 // Google Sign In failed, update UI appropriately
                 // ...
             }

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "640729643005-dueo6ih1ml2gk7blrsbji300ecrlpdf3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.portatil.compuglobalhipermeganet",
+            "certificate_hash": "cc69c924d59d728aba57453eb082801e9c2176c7"
+          }
+        },
+        {
           "client_id": "640729643005-u33hq7t8qms58163qum23cuu6gbihn12.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
