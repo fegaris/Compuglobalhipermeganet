@@ -46,6 +46,11 @@ public class Sign_up extends AppCompatActivity {
                         }
 
             }
+
+            public void back(View view){
+                        finish();
+            }
+
     private void updateUI(FirebaseUser user) {
         if (user != null){
             Toast.makeText(Sign_up.this, "Conectado", Toast.LENGTH_LONG).show();

@@ -61,6 +61,8 @@
         <activity
             android:name=".ContactoActivity"
             android:label="@string/title_activity_contacto"></activity>
+        <activity android:name="com.example.portatil.compuglobalhipermeganet.Sign_up"></activity>
+
     </application>
 
 </manifest>
