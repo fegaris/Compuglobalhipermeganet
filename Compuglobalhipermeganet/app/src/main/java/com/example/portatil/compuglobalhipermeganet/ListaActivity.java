@@ -33,23 +33,42 @@ public class ListaActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent=this.getIntent();
-        String valorCategoria =intent.getStringExtra("categoria");
+        final String valorCategoria =intent.getStringExtra("categoria");
 
         final DatabaseReference dbProductos = FirebaseDatabase.getInstance().getReference().child("productos");
-        Log.d("pruebas", "laura- "+valorCategoria);
-        Log.d("pruebas", "laura- "+dbProductos.getKey());
-        Log.d("pruebas", "laura- "+dbProductos.getDatabase());
-                //.orderByChild("categorias").equalTo(valorCategoria));
+        //.orderByChild("categorias").equalTo(valorCategoria));
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String idCategoria = dataSnapshot.getValue(String.class);
+                Query categoriaEscogida = dbProductos.orderByChild("categorias").equalTo(valorCategoria);
+                categoriaEscogida.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // Data is ordered by increasing height, so we want the first entry
+                        //DataSnapshot firstChild = dataSnapshot.getChildren().iterator().next();
+                       // System.out.println("The dinosaur just shorter than the stegosaurus is: " + firstChild.getKey());
 
-                /* dinosaursRef.child("stegosaurus").child("height").addValueEventListener(new ValueEventListener() {
-    @Override
-    public void onDataChange(DataSnapshot stegoHeightSnapshot) {
-        Integer favoriteDinoHeight = stegoHeightSnapshot.getValue(Integer.class);
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                            String name = ds.child("nombre").getValue(String.class);
+
+
+                            Categoria categ=ds.getValue(Categoria.class);
+                            //productos.add(new Producto("P001", "triciclo r", "triciclo rojo", "triciclo rojo de 50cm para 3 años", "triciclo.png", 55.90f));
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // ...
+                    }
+                });
+
+                /*
         Query query = dinosaursRef.orderByChild("height").endAt(favoriteDinoHeight).limitToLast(2);
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -72,28 +91,9 @@ public class ListaActivity extends AppCompatActivity {
     }
 });*/
 
-                //aquí, a través del objeto dataSnapshot, puedes acceder mediate childs a sus nodos hijos, que son las categorias
-                //puedes recorrer las categorías y de cada una acceder a sus hijos nombre y url y con los métodos getValue() de estos recuperar sus valores
-                Query categoriaEscogida = dataSnapshot.orderByChild("categorias").equalTo("cat_1");
-                Log.d("pruebas", qu.toString());
 
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                    String idCategoria = ds.getKey();
-                    Log.d("pruebas", "idCategoria" + idCategoria);
 
-                    String name = ds.child("nombre").getValue(String.class);
-                    Log.d("pruebas", "name" + name);
-
-                    String dir = ds.child("url").getValue(String.class);
-                    Log.d("pruebas", "dir " + dir);
-
-                    Categoria categ=ds.getValue(Categoria.class);
-
-                    Log.d("pruebas", "categ " + categ.toString());
-                    // list_categ.add(categ);
-
-                }
 
             }
 
@@ -111,13 +111,14 @@ public class ListaActivity extends AppCompatActivity {
 
 
 
-    //String idProducto, String nombre, String descripcionBreve, String detalle, String idFoto, float precio
+
     private void initializeData(){
         productos = new ArrayList<>();
+        /*
         productos.add(new Producto("P001", "triciclo r", "triciclo rojo", "triciclo rojo de 50cm para 3 años", "triciclo.png", 55.90f));
         productos.add(new Producto("P002", "triciclo a", "triciclo azul", "triciclo azul de 50cm para 3 años", "triciclo.png", 55.90f));
         productos.add(new Producto("P003", "triciclo v", "triciclo verde", "triciclo verde de 50cm para 3 años", "triciclo.png", 55.90f));
-
+*/
         RVAdapter adapter = new RVAdapter(productos);
         rv.setAdapter(adapter);
     }
