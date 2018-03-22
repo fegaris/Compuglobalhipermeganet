@@ -42,4 +42,11 @@
         android:layout_marginStart="27dp"
         android:text="Button" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoria prueba"
+        android:id="@+id/btncateg"
+        android:onClick="categPrueba"/>
+
 </LinearLayout>

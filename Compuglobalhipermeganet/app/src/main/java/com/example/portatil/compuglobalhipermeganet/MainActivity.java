@@ -56,4 +56,10 @@ public void contactar(View view)
     this.startActivity(in);
 }
 
+public void categPrueba(View v){
+    Intent i=new Intent(this,ListaActivity.class);
+    i.putExtra("categoria","cat_1");
+    this.startActivity(i);
+}
+
 }
