@@ -7,24 +7,31 @@
     android:orientation="vertical"
     android:padding="5dp">
 
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textSize="24sp"
         android:text="ToyLand"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_gravity="center"
         android:text="Calle Torres Quevedo"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correo@toyland.es"/>
+        android:layout_gravity="center"
+        android:text=" correo@toyland.es"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="967 111111"/>
+        android:layout_gravity="center"
+        android:text="967 111111"
+        android:paddingBottom="12dp"/>
+
 
 
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
