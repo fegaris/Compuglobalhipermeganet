@@ -36,10 +36,16 @@ public class MainActivity extends AppCompatActivity {
         gv = (GridView) findViewById(R.id.gridprincipal);
 
         //INITIALIZE FIREBASE DB
-       // db = FirebaseDatabase.getInstance().getReference();
+       db = FirebaseDatabase.getInstance().getReference();
+<<<<<<< HEAD
       
-        db =  FirebaseDatabase.getInstance().getReference()
-                .child("categorias");
+        //db =  FirebaseDatabase.getInstance().getReference().child("categorias");
+=======
+
+      
+        //db =  FirebaseDatabase.getInstance().getReference()
+          //      .child("categorias");
+>>>>>>> 94eeeca5b5553267d80459f809884ad9df96c1f2
         helper = new FirebaseHelper(db);
 
         //ADAPTER
@@ -49,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
 public void contactar(View view)
 {
-    //Intent in=new Intent(this,actividad.class);
-    //this.startActivity(in);
+    Intent in=new Intent(this,ContactoActivity.class);
+    this.startActivity(in);
 }
 
 }

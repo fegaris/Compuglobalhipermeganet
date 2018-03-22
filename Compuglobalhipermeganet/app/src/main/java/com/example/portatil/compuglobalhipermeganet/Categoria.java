@@ -18,6 +18,12 @@ public class Categoria {
         this.url = url;
     }
 
+    public Categoria(Categoria value) {
+        idCategoria = value.idCategoria;
+        nombre = value.nombre;
+        url = value.url;
+    }
+
     public String getIdCategoria() {
         return idCategoria;
     }
@@ -40,5 +46,14 @@ public class Categoria {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "idCategoria='" + idCategoria + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }

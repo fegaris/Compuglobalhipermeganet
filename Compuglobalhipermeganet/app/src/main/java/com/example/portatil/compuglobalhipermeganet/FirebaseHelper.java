@@ -1,5 +1,8 @@
 package com.example.portatil.compuglobalhipermeganet;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,14 +48,22 @@ public class FirebaseHelper {
     //IMPLEMENT FETCH DATA AND FILL ARRAYLIST
     private void fetchData(DataSnapshot dataSnapshot)
     {
-        list_categ.clear();
+        if(dataSnapshot.getKey().toString().equals("categorias")){
 
         for (DataSnapshot ds : dataSnapshot.getChildren())
         {
-            Categoria categ=ds.getValue(Categoria.class);
+            //ds.getValue(Categoria.class
+            Categoria categ=new Categoria();
+
+            //categ.setNombre(ds.getChildren().toString());
+
+            categ.setIdCategoria(ds.getKey());
+            categ.setNombre(ds.child("nombre").getValue(String.class));
+           categ.setUrl(ds.child("url").getValue(String.class));
+
+            Log.d("Categoria", categ.toString());
             list_categ.add(categ);
-          
-        }
+        }}
     }
     //READ BY HOOKING ONTO DATABASE OPERATION CALLBACKS
     public ArrayList<Categoria> retrieve() {
@@ -60,6 +71,7 @@ public class FirebaseHelper {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 fetchData(dataSnapshot);
+                Log.d("categ", list_categ.size()+"");
             }
 
             @Override
