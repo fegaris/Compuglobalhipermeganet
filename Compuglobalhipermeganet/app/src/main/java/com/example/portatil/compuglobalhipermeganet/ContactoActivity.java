@@ -39,14 +39,8 @@ public class ContactoActivity extends FragmentActivity implements OnMapReadyCall
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-<<<<<<< HEAD
-        LatLng sydney = new LatLng(38.9929953, -1.8605619);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("ToyLand"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-=======
         LatLng tienda = new LatLng(38.9936115, -1.85956);
         mMap.addMarker(new MarkerOptions().position(tienda).title("Tienda fisica"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tienda,12));
->>>>>>> 84cf3ee7213ec351f74c5c41901c664723502bc2
     }
 }

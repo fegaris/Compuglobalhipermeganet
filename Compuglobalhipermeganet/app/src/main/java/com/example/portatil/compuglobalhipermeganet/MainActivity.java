@@ -40,22 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
         //INITIALIZE FIREBASE DB
        db = FirebaseDatabase.getInstance().getReference();
-<<<<<<< HEAD
-<<<<<<< HEAD
-      
-        //db =  FirebaseDatabase.getInstance().getReference().child("categorias");
-=======
 
       
         //db =  FirebaseDatabase.getInstance().getReference()
           //      .child("categorias");
->>>>>>> 94eeeca5b5553267d80459f809884ad9df96c1f2
-=======
-
-      
-        //db =  FirebaseDatabase.getInstance().getReference()
-          //      .child("categorias");
->>>>>>> 84cf3ee7213ec351f74c5c41901c664723502bc2
         helper = new FirebaseHelper(db);
 
         //ADAPTER
