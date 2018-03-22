@@ -15,7 +15,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="183dp"
-        android:text="GRACIAS POR CONFIAR EN NOSOTROS"
+        android:textAlignment="center"
+        android:text="Hasta pronto\n ¡GRACIAS POR CONFIAR EN NOSOTROS!"
         android:textColorHighlight="@color/cardview_dark_background"
-        android:textSize="30sp" />
+        android:textSize="32sp" />
 </RelativeLayout>
