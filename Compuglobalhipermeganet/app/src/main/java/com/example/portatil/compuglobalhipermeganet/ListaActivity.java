@@ -54,7 +54,7 @@ public class ListaActivity extends AppCompatActivity {
 
     private void fetchData(DataSnapshot dataSnapshot)
     {
-        Log.d("po", "fetchData");
+Log.d("pruebas", "revisando dato" + dataSnapshot.getValue().toString());
         if(dataSnapshot.getKey().toString().equals("productos")){
 
             for (DataSnapshot ds : dataSnapshot.getChildren())
@@ -63,13 +63,12 @@ public class ListaActivity extends AppCompatActivity {
                 Producto prod=new Producto();
 
                 prod.setIdproducto(ds.child("idproducto").getValue(String.class));
-                prod.setIdcategoria(ds.child("categoria").getValue(String.class));
+                prod.setIdcategoria(ds.child("categoria").getKey());
                 prod.setNombre(ds.child("nombre").getValue(String.class));
                 prod.setCorta(ds.child("corta").getValue(String.class));
                 prod.setIdfoto(ds.child("idfoto").getValue(String.class));
                 prod.setLarga(ds.child("larga").getValue(String.class));
                 prod.setPrecio(ds.child("precio").getValue(String.class));
-                prod.setStock(ds.child("stock").getValue(String.class));
                 productos.add(prod);
 
                 Log.d("pruebas", productos.toString() );
@@ -77,11 +76,10 @@ public class ListaActivity extends AppCompatActivity {
 
     public ArrayList<Producto> retrieve() {
         Log.d("po", "retrieve");
-        dbProductos.addChildEventListener( new ChildEventListener() {
+        final ChildEventListener childEventListener = dbProductos.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 fetchData(dataSnapshot);
-                Log.d("po", productos.size()+"");
             }
 
             @Override
