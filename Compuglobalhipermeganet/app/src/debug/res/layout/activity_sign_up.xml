@@ -22,7 +22,8 @@
             android:id="@+id/sign_upPassword"
             android:layout_width="wrap_content"
             android:hint="contraseña"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
