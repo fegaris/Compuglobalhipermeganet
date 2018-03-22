@@ -62,15 +62,18 @@ public class AdaptadorCategory extends BaseAdapter {
 
         nombre.setText(item.getNombre());
         Glide.with(imagen_categoria.getContext())
-                .load(lis_categ.get(0).getUrl())
+                .load(item.getUrl())
                 .into(imagen_categoria );
+
+
 
     //Cuando hago click en la grilla me lleva a la actividad de detalle
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //OPEN DETAIL
-                openDetailActivity(item.getNombre());
+
+                openDetailActivity(item.getIdCategoria());
             }
         });
 
@@ -86,9 +89,10 @@ public class AdaptadorCategory extends BaseAdapter {
 
         Intent i=new Intent(context,ListaActivity.class);
 
-        i.putExtra("categoria","cat_1");
+        Log.d("raquel", "paso " + details[0] );
+        i.putExtra("categoria",details[0]);
 
-        Log.d("raquel" , "el nombre que paso es " + details[0] );
+
 
 
         context.startActivity(i);

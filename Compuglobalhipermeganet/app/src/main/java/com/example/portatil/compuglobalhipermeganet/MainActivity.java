@@ -1,6 +1,7 @@
 package com.example.portatil.compuglobalhipermeganet;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -46,12 +47,19 @@ public class MainActivity extends AppCompatActivity {
         //ADAPTER
         adapter = new AdaptadorCategory(this, helper.retrieve());
         gv.setAdapter(adapter);
+
+        //Pongo los estilos
+
+
+        gv.setVerticalSpacing(10);
+        gv.setHorizontalSpacing(10);
+
     }
 
 public void contactar(View view)
 {
-    //Intent in=new Intent(this,actividad.class);
-    //this.startActivity(in);
+    Intent in=new Intent(this,ContactoActivity.class);
+    this.startActivity(in);
 }
 
 }

@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.portatil.compuglobalhipermeganet.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/backgrid"
+    >
 
 
 
@@ -22,7 +25,11 @@
             android:stretchMode="columnWidth"
             android:verticalSpacing="5dp"
             android:focusable="true"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:background="@color/backgrid"
+
+            />
 
 
     <Button
@@ -30,7 +37,8 @@
         android:layout_height="wrap_content"
         android:text="Contacto"
         android:id="@+id/btncontacto"
-        android:onClick="contactar"/>
+        android:onClick="contactar"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/button2"
