@@ -6,28 +6,40 @@ package com.example.portatil.compuglobalhipermeganet;
 
 public class Producto {
 
-        private String idProducto;
-        private String nombre;
-        private String descripcionBreve;
-        private String detalle;
-        private String idFoto;
-        private float precio;
+    private String idproducto;
+    private String idcategoria;
+    private String nombre;
+    private String corta;
+    private String larga;
+    private String idfoto;
+    private String precio;
+    private String stock;
 
-    public Producto(String idProducto, String nombre, String descripcionBreve, String detalle, String idFoto, float precio) {
-            this.idProducto = idProducto;
-            this.nombre = nombre;
-            this.descripcionBreve = descripcionBreve;
-            this.detalle = detalle;
-            this.idFoto = idFoto;
-            this.precio = precio;
-        }
-
-    public String getIdProducto() {
-        return idProducto;
+    public Producto(String idproducto, String idcategoria, String nombre, String corta, String larga, String idfoto, String precio, String stock) {
+        this.idproducto = idproducto;
+        this.idcategoria = idcategoria;
+        this.nombre = nombre;
+        this.corta = corta;
+        this.larga = larga;
+        this.idfoto = idfoto;
+        this.precio = precio;
+        this.stock = stock;
     }
 
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
+    public String getIdproducto() {
+        return idproducto;
+    }
+
+    public void setIdproducto(String idproducto) {
+        this.idproducto = idproducto;
+    }
+
+    public String getIdcategoria() {
+        return idcategoria;
+    }
+
+    public void setIdcategoria(String idcategoria) {
+        this.idcategoria = idcategoria;
     }
 
     public String getNombre() {
@@ -38,42 +50,59 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getDescripcionBreve() {
-        return descripcionBreve;
+    public String getCorta() {
+        return corta;
     }
 
-    public void setDescripcionBreve(String descripcionBreve) {
-        this.descripcionBreve = descripcionBreve;
+    public void setCorta(String corta) {
+        this.corta = corta;
     }
 
-    public String getDetalle() {
-        return detalle;
+    public String getLarga() {
+        return larga;
     }
 
-    public void setDetalle(String detalle) {
-        this.detalle = detalle;
+    public void setLarga(String larga) {
+        this.larga = larga;
     }
 
-    public String getIdFoto() {
-        return idFoto;
+    public String getIdfoto() {
+        return idfoto;
     }
 
-    public void setIdFoto(String idFoto) {
-        this.idFoto = idFoto;
+    public void setIdfoto(String idfoto) {
+        this.idfoto = idfoto;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
+
+    public String getStock() {
+        return stock;
+    }
+
+    public void setStock(String stock) {
+        this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "idproducto='" + idproducto + '\'' +
+                ", idcategoria='" + idcategoria + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", corta='" + corta + '\'' +
+                ", larga='" + larga + '\'' +
+                ", idfoto='" + idfoto + '\'' +
+                ", precio='" + precio + '\'' +
+                ", stock='" + stock + '\'' +
+                '}';
+    }
 }
-
-
-
-
-
 
 
